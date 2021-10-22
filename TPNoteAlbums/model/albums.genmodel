@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TPNoteAlbums/src" modelPluginID="TPNoteAlbums"
+    modelName="Albums" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>albums.ecore</foreignModel>
+  <genPackages prefix="Albums" disposableProviderFactory="true" ecorePackage="albums.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="albums.ecore#//AlbumsType">
+      <genEnumLiterals ecoreEnumLiteral="albums.ecore#//AlbumsType/SINGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="albums.ecore#//AlbumsType/COMPILATION"/>
+    </genEnums>
+    <genClasses ecoreClass="albums.ecore#//Album">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Album/anneeSortie"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Album/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Album/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference albums.ecore#//Album/chansons"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Album/id"/>
+    </genClasses>
+    <genClasses ecoreClass="albums.ecore#//Chanson">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference albums.ecore#//Chanson/chanteurs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference albums.ecore#//Chanson/auteur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Chanson/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Chanson/titre"/>
+    </genClasses>
+    <genClasses ecoreClass="albums.ecore#//Personne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute albums.ecore#//Personne/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference albums.ecore#//Personne/chansonsChanteur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference albums.ecore#//Personne/chansonsAuteur"/>
+    </genClasses>
+    <genClasses ecoreClass="albums.ecore#//MaisonDeDisques">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference albums.ecore#//MaisonDeDisques/albums"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference albums.ecore#//MaisonDeDisques/chansons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference albums.ecore#//MaisonDeDisques/personnes"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
