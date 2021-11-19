@@ -1,14 +1,14 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: ups.m2dl.tpNote.ui
+Automatic-Module-Name: ups.m2dl.tpnote.ui
 Bundle-ManifestVersion: 2
-Bundle-Name: ups.m2dl.tpNote.ui
+Bundle-Name: ups.m2dl.tpnote.ui
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: ups.m2dl.tpNote.ui; singleton:=true
+Bundle-SymbolicName: ups.m2dl.tpnote.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: ups.m2dl.tpNote,
- ups.m2dl.tpNote.ide,
- TPNoteAlbums,
+Require-Bundle: ups.m2dl.tpnote,
+ ups.m2dl.tpnote.ide,
+ TPNoteMaisonDeDisque,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
@@ -18,8 +18,8 @@ Require-Bundle: ups.m2dl.tpNote,
  org.eclipse.compare,
  org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: ups.m2dl.tpNote.ui.quickfix,
- ups.m2dl.tpNote.ui.internal,
- ups.m2dl.tpNote.ui.contentassist
-Bundle-Activator: ups.m2dl.tpNote.ui.internal.TpNoteActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ups.m2dl.tpnote.ui.internal,
+ ups.m2dl.tpnote.ui.quickfix,
+ ups.m2dl.tpnote.ui.contentassist
+Bundle-Activator: ups.m2dl.tpnote.ui.internal.TpnoteActivator

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TPNoteMaisonDeDisque/src" modelPluginID="TPNoteMaisonDeDisque"
+    modelName="MaisonDeDisque" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>maisonDeDisque.ecore</foreignModel>
+  <genPackages prefix="MaisonDeDisque" disposableProviderFactory="true" ecorePackage="maisonDeDisque.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="maisonDeDisque.ecore#//AlbumType">
+      <genEnumLiterals ecoreEnumLiteral="maisonDeDisque.ecore#//AlbumType/SINGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="maisonDeDisque.ecore#//AlbumType/COMPILATION"/>
+    </genEnums>
+    <genClasses ecoreClass="maisonDeDisque.ecore#//MaisonDeDisque">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//MaisonDeDisque/chansons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//MaisonDeDisque/albums"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//MaisonDeDisque/personnes"/>
+    </genClasses>
+    <genClasses ecoreClass="maisonDeDisque.ecore#//Chanson">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//Chanson/auteurs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//Chanson/chanteurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maisonDeDisque.ecore#//Chanson/name"/>
+    </genClasses>
+    <genClasses ecoreClass="maisonDeDisque.ecore#//Album">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference maisonDeDisque.ecore#//Album/chansons"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maisonDeDisque.ecore#//Album/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maisonDeDisque.ecore#//Album/anneeSortie"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maisonDeDisque.ecore#//Album/type"/>
+    </genClasses>
+    <genClasses ecoreClass="maisonDeDisque.ecore#//Personne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maisonDeDisque.ecore#//Personne/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abm:MaisonDeDisques xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abm="http://ups/m2/TPNote/albums">
+  <albums anneeSortie="1999-01-01T00:00:00.000+0100" nom="Bon exemple" chansons="//@chansons.0 //@chansons.1 //@chansons.2" id="1"/>
+  <chansons chanteurs="//@personnes.0" auteur="//@personnes.1" id="1" titre="It's hard"/>
+  <chansons chanteurs="//@personnes.0" auteur="//@personnes.0" id="2" titre="Try, try, try"/>
+  <chansons chanteurs="//@personnes.1 //@personnes.0" auteur="//@personnes.0" id="3" titre="Bon courage"/>
+  <personnes nom="gentil prof" chansonsChanteur="//@chansons.0 //@chansons.1 //@chansons.2" chansonsAuteur="//@chansons.1 //@chansons.2"/>
+  <personnes nom="mechant prof" chansonsChanteur="//@chansons.2" chansonsAuteur="//@chansons.0"/>
+</abm:MaisonDeDisques>

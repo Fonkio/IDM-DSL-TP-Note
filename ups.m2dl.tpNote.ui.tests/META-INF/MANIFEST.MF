@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: ups.m2dl.tpNote.ui.tests
+Automatic-Module-Name: ups.m2dl.tpnote.ui.tests
 Bundle-ManifestVersion: 2
-Bundle-Name: ups.m2dl.tpNote.ui.tests
+Bundle-Name: ups.m2dl.tpnote.ui.tests
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: ups.m2dl.tpNote.ui.tests; singleton:=true
+Bundle-SymbolicName: ups.m2dl.tpnote.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: ups.m2dl.tpNote.ui,
- TPNoteAlbums,
+Require-Bundle: ups.m2dl.tpnote.ui,
+ TPNoteMaisonDeDisque,
  org.junit.jupiter.api;bundle-version="[5.1.0,6.0.0)",
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing,
@@ -15,5 +15,5 @@ Require-Bundle: ups.m2dl.tpNote.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext.ui.testing,
  org.eclipse.ui.workbench;resolution:=optional
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: ups.m2dl.tpNote.ui.tests;x-internal=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ups.m2dl.tpnote.ui.tests;x-internal=true

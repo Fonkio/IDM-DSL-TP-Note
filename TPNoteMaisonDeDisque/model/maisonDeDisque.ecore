@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="maisonDeDisque" nsURI="http://ups/m2dl/TP1/maisonDeDisque" nsPrefix="mdd">
+  <eClassifiers xsi:type="ecore:EClass" name="MaisonDeDisque">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chansons" lowerBound="1"
+        upperBound="-1" eType="#//Chanson" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="albums" lowerBound="1"
+        upperBound="-1" eType="#//Album" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="personnes" lowerBound="1"
+        upperBound="-1" eType="#//Personne" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Chanson">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="auteurs" lowerBound="1"
+        upperBound="-1" eType="#//Personne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chanteurs" lowerBound="1"
+        upperBound="-1" eType="#//Personne"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Album">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chansons" lowerBound="1"
+        upperBound="-1" eType="#//Chanson"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anneeSortie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AlbumType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Personne">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AlbumType">
+    <eLiterals name="SINGLE"/>
+    <eLiterals name="COMPILATION" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

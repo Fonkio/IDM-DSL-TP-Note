@@ -1,0 +1,24 @@
+MaisonDeDisque{
+	chansons{
+		Chanson c1 {
+			auteurs ( 
+				p1 
+			)
+			chanteurs (
+				p1
+			)
+		}
+	}
+	albums{
+		Album a1 {
+			anneeSortie "1999"
+			type SINGLE
+			chansons(
+				c1
+			)
+		}
+	}
+	personnes{
+		Personne p1
+	}
+}

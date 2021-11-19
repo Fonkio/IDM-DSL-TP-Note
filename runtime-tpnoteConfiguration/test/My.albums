@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<abm:MaisonDeDisques xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abm="http://ups/m2/TPNote/albums">
-  <albums/>
-  <chansons id="1" titre="chanson1"/>
-  <personnes nom="Auteur"/>
-  <personnes/>
-</abm:MaisonDeDisques>

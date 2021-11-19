@@ -1,4 +1,4 @@
-module ups.m2dl.tpNote.GenerateMaisonDeDisque
+module ups.m2dl.tpnote.GenerateMaisonDeDisque
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -10,7 +10,7 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "ups.m2dl.tpNote"
+				baseName = "ups.m2dl.tpnote"
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
@@ -31,9 +31,9 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "ups.m2dl.tpNote.MaisonDeDisque"
-			fileExtensions = "albums"
-			referencedResource = "platform:/resource/TPNoteAlbums/model/albums.genmodel"
+			name = "ups.m2dl.tpnote.MaisonDeDisque"
+			fileExtensions = "mdd"
+			referencedResource = "platform:/resource/TPNoteMaisonDeDisque/model/maisonDeDisque.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

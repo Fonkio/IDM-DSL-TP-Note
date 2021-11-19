@@ -1,26 +1,26 @@
 Manifest-Version: 1.0
-Automatic-Module-Name: ups.m2dl.tpNote
+Automatic-Module-Name: ups.m2dl.tpnote
 Bundle-ManifestVersion: 2
-Bundle-Name: ups.m2dl.tpNote
+Bundle-Name: ups.m2dl.tpnote
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: ups.m2dl.tpNote; singleton:=true
+Bundle-SymbolicName: ups.m2dl.tpnote; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: TPNoteAlbums,
+Require-Bundle: TPNoteMaisonDeDisque,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.util,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: ups.m2dl.tpNote.parser.antlr.internal,
- ups.m2dl.tpNote,
- ups.m2dl.tpNote.generator,
- ups.m2dl.tpNote.scoping,
- ups.m2dl.tpNote.formatting2,
- ups.m2dl.tpNote.services,
- ups.m2dl.tpNote.parser.antlr,
- ups.m2dl.tpNote.validation,
- ups.m2dl.tpNote.serializer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ups.m2dl.tpnote,
+ ups.m2dl.tpnote.scoping,
+ ups.m2dl.tpnote.serializer,
+ ups.m2dl.tpnote.services,
+ ups.m2dl.tpnote.parser.antlr,
+ ups.m2dl.tpnote.generator,
+ ups.m2dl.tpnote.parser.antlr.internal,
+ ups.m2dl.tpnote.validation,
+ ups.m2dl.tpnote.formatting2
 Import-Package: org.apache.log4j

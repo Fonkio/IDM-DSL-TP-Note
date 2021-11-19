@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="albums"
-			id="ups.m2dl.tpNote.MaisonDeDisque"
+			extensions="mdd"
+			id="ups.m2dl.tpnote.MaisonDeDisque"
 			name="MaisonDeDisque Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="ups.m2dl.tpNote.MaisonDeDisque.validate">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="ups.m2dl.tpnote.MaisonDeDisque.validate">
 			<activeWhen>
 				<reference
-					definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened" />
+				<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.XtextEditor.opened" />
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+		<definition id="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ups.m2dl.tpNote.MaisonDeDisque"
+						value="ups.m2dl.tpnote.MaisonDeDisque"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="ups.m2dl.tpNote.MaisonDeDisque.XtextEditor.opened">
+		<definition id="ups.m2dl.tpnote.MaisonDeDisque.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ups.m2dl.tpNote.MaisonDeDisque"
+						value="ups.m2dl.tpnote.MaisonDeDisque"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque"
 			name="MaisonDeDisque">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.coloring"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.templates"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.templates"
 			name="Templates">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque"
 			name="MaisonDeDisque">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"
+			id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"
 			label="MaisonDeDisque"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
 			description="Trigger expensive validation"
-			id="ups.m2dl.tpNote.MaisonDeDisque.validate"
+			id="ups.m2dl.tpnote.MaisonDeDisque.validate"
 			name="Validate">
 		</command>
 		<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			<command
-				commandId="ups.m2dl.tpNote.MaisonDeDisque.validate"
+				commandId="ups.m2dl.tpnote.MaisonDeDisque.validate"
 				style="push"
 				tooltip="Trigger expensive validation">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+						definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened" />
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened" />
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.XtextEditor.opened" />
+						<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -207,8 +207,8 @@
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
-			file-extensions="albums"
-			id="ups.m2dl.tpNote.MaisonDeDisque.contenttype"
+			file-extensions="mdd"
+			id="ups.m2dl.tpnote.MaisonDeDisque.contenttype"
 			name="MaisonDeDisque File"
 			priority="normal">
 		</content-type>
@@ -217,17 +217,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="albums">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="mdd">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-			uriExtension="albums">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="mdd">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for ups.m2dl.tpNote.MaisonDeDisque -->
+	<!-- marker definitions for ups.m2dl.tpnote.MaisonDeDisque -->
 	<extension
 			id="maisondedisque.check.fast"
 			name="MaisonDeDisque Problem"
@@ -251,34 +251,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.validator.preferencePage"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="albums"/>
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			fileExtensions="mdd"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.compiler.preferencePage"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.compiler.propertyPage"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -289,20 +289,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="ups.m2dl.tpNote.MaisonDeDisque.OpenGeneratedCode"
+				id="ups.m2dl.tpnote.MaisonDeDisque.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened" />
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened" />
+				<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -310,11 +310,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -334,33 +334,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened"/>
+					<reference definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for ups.m2dl.tpNote.MaisonDeDisque -->
+	<!-- quickfix marker resolution generator for ups.m2dl.tpnote.MaisonDeDisque -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="ups.m2dl.tpNote.ui.maisondedisque.check.fast">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="ups.m2dl.tpnote.ui.maisondedisque.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="ups.m2dl.tpNote.ui.maisondedisque.check.normal">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="ups.m2dl.tpnote.ui.maisondedisque.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="ups.m2dl.tpNote.ui.maisondedisque.check.expensive">
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="ups.m2dl.tpnote.ui.maisondedisque.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
@@ -370,11 +370,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+					definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -386,7 +386,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="ups.m2dl.tpNote.MaisonDeDisque.Editor.opened">
+						definitionId="ups.m2dl.tpnote.MaisonDeDisque.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -394,40 +394,40 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ups.m2dl.tpNote.MaisonDeDisque"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="ups.m2dl.tpNote.MaisonDeDisque.refactoring"
+			category="ups.m2dl.tpnote.MaisonDeDisque"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="ups.m2dl.tpnote.MaisonDeDisque.refactoring"
 			name="Refactoring">
-			<keywordReference id="ups.m2dl.tpNote.ui.keyword_MaisonDeDisque"/>
+			<keywordReference id="ups.m2dl.tpnote.ui.keyword_MaisonDeDisque"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="ups.m2dl.tpNote.MaisonDeDisque.compare.contentViewers"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="albums">
+		<viewer id="ups.m2dl.tpnote.MaisonDeDisque.compare.contentViewers"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="mdd">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ups.m2dl.tpNote.MaisonDeDisque.contenttype"
-			contentViewerId="ups.m2dl.tpNote.MaisonDeDisque.compare.contentViewers" />
+			contentTypeId="ups.m2dl.tpnote.MaisonDeDisque.contenttype"
+			contentViewerId="ups.m2dl.tpnote.MaisonDeDisque.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="ups.m2dl.tpNote.MaisonDeDisque.compare.contentMergeViewers"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="albums" label="MaisonDeDisque Compare">
+		<viewer id="ups.m2dl.tpnote.MaisonDeDisque.compare.contentMergeViewers"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="mdd" label="MaisonDeDisque Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ups.m2dl.tpNote.MaisonDeDisque.contenttype"
-			contentMergeViewerId="ups.m2dl.tpNote.MaisonDeDisque.compare.contentMergeViewers" />
+			contentTypeId="ups.m2dl.tpnote.MaisonDeDisque.contenttype"
+			contentMergeViewerId="ups.m2dl.tpnote.MaisonDeDisque.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="ups.m2dl.tpNote.MaisonDeDisque.editors.documentProviders"
-			class="ups.m2dl.tpNote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="albums">
+		<provider id="ups.m2dl.tpnote.MaisonDeDisque.editors.documentProviders"
+			class="ups.m2dl.tpnote.ui.MaisonDeDisqueExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+			extensions="mdd">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="albums"
+			extension="mdd"
 			type="text">
 		</fileTypes>
 	</extension>

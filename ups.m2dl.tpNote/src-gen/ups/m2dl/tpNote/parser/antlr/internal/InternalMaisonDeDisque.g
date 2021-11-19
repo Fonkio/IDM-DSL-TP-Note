@@ -8,7 +8,7 @@ options {
 }
 
 @lexer::header {
-package ups.m2dl.tpNote.parser.antlr.internal;
+package ups.m2dl.tpnote.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
@@ -16,7 +16,7 @@ import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
 @parser::header {
-package ups.m2dl.tpNote.parser.antlr.internal;
+package ups.m2dl.tpnote.parser.antlr.internal;
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -28,7 +28,7 @@ import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
-import ups.m2dl.tpNote.services.MaisonDeDisqueGrammarAccess;
+import ups.m2dl.tpnote.services.MaisonDeDisqueGrammarAccess;
 
 }
 
@@ -44,7 +44,7 @@ import ups.m2dl.tpNote.services.MaisonDeDisqueGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "MaisonDeDisques";
+    	return "MaisonDeDisque";
    	}
 
    	@Override
@@ -61,15 +61,15 @@ import ups.m2dl.tpNote.services.MaisonDeDisqueGrammarAccess;
     }
 }
 
-// Entry rule entryRuleMaisonDeDisques
-entryRuleMaisonDeDisques returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMaisonDeDisquesRule()); }
-	iv_ruleMaisonDeDisques=ruleMaisonDeDisques
-	{ $current=$iv_ruleMaisonDeDisques.current; }
+// Entry rule entryRuleMaisonDeDisque
+entryRuleMaisonDeDisque returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMaisonDeDisqueRule()); }
+	iv_ruleMaisonDeDisque=ruleMaisonDeDisque
+	{ $current=$iv_ruleMaisonDeDisque.current; }
 	EOF;
 
-// Rule MaisonDeDisques
-ruleMaisonDeDisques returns [EObject current=null]
+// Rule MaisonDeDisque
+ruleMaisonDeDisque returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -77,37 +77,37 @@ ruleMaisonDeDisques returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='MaisonDeDisques'
+		otherlv_0='MaisonDeDisque'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getMaisonDeDisquesAccess().getMaisonDeDisquesKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getMaisonDeDisqueAccess().getMaisonDeDisqueKeyword_0());
 		}
 		otherlv_1='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getMaisonDeDisquesAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getMaisonDeDisqueAccess().getLeftCurlyBracketKeyword_1());
 		}
-		otherlv_2='albums'
+		otherlv_2='chansons'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getMaisonDeDisquesAccess().getAlbumsKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getMaisonDeDisqueAccess().getChansonsKeyword_2());
 		}
 		otherlv_3='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getMaisonDeDisquesAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getMaisonDeDisqueAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getAlbumsAlbumParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getChansonsChansonParserRuleCall_4_0());
 				}
-				lv_albums_4_0=ruleAlbum
+				lv_chansons_4_0=ruleChanson
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+						$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 					}
 					add(
 						$current,
-						"albums",
-						lv_albums_4_0,
-						"ups.m2dl.tpNote.MaisonDeDisque.Album");
+						"chansons",
+						lv_chansons_4_0,
+						"ups.m2dl.tpnote.MaisonDeDisque.Chanson");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -115,23 +115,23 @@ ruleMaisonDeDisques returns [EObject current=null]
 		(
 			otherlv_5=','
 			{
-				newLeafNode(otherlv_5, grammarAccess.getMaisonDeDisquesAccess().getCommaKeyword_5_0());
+				newLeafNode(otherlv_5, grammarAccess.getMaisonDeDisqueAccess().getCommaKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getAlbumsAlbumParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getChansonsChansonParserRuleCall_5_1_0());
 					}
-					lv_albums_6_0=ruleAlbum
+					lv_chansons_6_0=ruleChanson
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+							$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 						}
 						add(
 							$current,
-							"albums",
-							lv_albums_6_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.Album");
+							"chansons",
+							lv_chansons_6_0,
+							"ups.m2dl.tpnote.MaisonDeDisque.Chanson");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -139,31 +139,31 @@ ruleMaisonDeDisques returns [EObject current=null]
 		)*
 		otherlv_7='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getMaisonDeDisquesAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getMaisonDeDisqueAccess().getRightCurlyBracketKeyword_6());
 		}
-		otherlv_8='chansons'
+		otherlv_8='albums'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMaisonDeDisquesAccess().getChansonsKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getMaisonDeDisqueAccess().getAlbumsKeyword_7());
 		}
 		otherlv_9='{'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getMaisonDeDisquesAccess().getLeftCurlyBracketKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getMaisonDeDisqueAccess().getLeftCurlyBracketKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getChansonsChansonParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getAlbumsAlbumParserRuleCall_9_0());
 				}
-				lv_chansons_10_0=ruleChanson
+				lv_albums_10_0=ruleAlbum
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+						$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 					}
 					add(
 						$current,
-						"chansons",
-						lv_chansons_10_0,
-						"ups.m2dl.tpNote.MaisonDeDisque.Chanson");
+						"albums",
+						lv_albums_10_0,
+						"ups.m2dl.tpnote.MaisonDeDisque.Album");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -171,23 +171,23 @@ ruleMaisonDeDisques returns [EObject current=null]
 		(
 			otherlv_11=','
 			{
-				newLeafNode(otherlv_11, grammarAccess.getMaisonDeDisquesAccess().getCommaKeyword_10_0());
+				newLeafNode(otherlv_11, grammarAccess.getMaisonDeDisqueAccess().getCommaKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getChansonsChansonParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getAlbumsAlbumParserRuleCall_10_1_0());
 					}
-					lv_chansons_12_0=ruleChanson
+					lv_albums_12_0=ruleAlbum
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+							$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 						}
 						add(
 							$current,
-							"chansons",
-							lv_chansons_12_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.Chanson");
+							"albums",
+							lv_albums_12_0,
+							"ups.m2dl.tpnote.MaisonDeDisque.Album");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -195,31 +195,31 @@ ruleMaisonDeDisques returns [EObject current=null]
 		)*
 		otherlv_13='}'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getMaisonDeDisquesAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_13, grammarAccess.getMaisonDeDisqueAccess().getRightCurlyBracketKeyword_11());
 		}
 		otherlv_14='personnes'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getMaisonDeDisquesAccess().getPersonnesKeyword_12());
+			newLeafNode(otherlv_14, grammarAccess.getMaisonDeDisqueAccess().getPersonnesKeyword_12());
 		}
 		otherlv_15='{'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getMaisonDeDisquesAccess().getLeftCurlyBracketKeyword_13());
+			newLeafNode(otherlv_15, grammarAccess.getMaisonDeDisqueAccess().getLeftCurlyBracketKeyword_13());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getPersonnesPersonneParserRuleCall_14_0());
+					newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getPersonnesPersonneParserRuleCall_14_0());
 				}
 				lv_personnes_16_0=rulePersonne
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+						$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 					}
 					add(
 						$current,
 						"personnes",
 						lv_personnes_16_0,
-						"ups.m2dl.tpNote.MaisonDeDisque.Personne");
+						"ups.m2dl.tpnote.MaisonDeDisque.Personne");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -227,23 +227,23 @@ ruleMaisonDeDisques returns [EObject current=null]
 		(
 			otherlv_17=','
 			{
-				newLeafNode(otherlv_17, grammarAccess.getMaisonDeDisquesAccess().getCommaKeyword_15_0());
+				newLeafNode(otherlv_17, grammarAccess.getMaisonDeDisqueAccess().getCommaKeyword_15_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMaisonDeDisquesAccess().getPersonnesPersonneParserRuleCall_15_1_0());
+						newCompositeNode(grammarAccess.getMaisonDeDisqueAccess().getPersonnesPersonneParserRuleCall_15_1_0());
 					}
 					lv_personnes_18_0=rulePersonne
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMaisonDeDisquesRule());
+							$current = createModelElementForParent(grammarAccess.getMaisonDeDisqueRule());
 						}
 						add(
 							$current,
 							"personnes",
 							lv_personnes_18_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.Personne");
+							"ups.m2dl.tpnote.MaisonDeDisque.Personne");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -251,192 +251,11 @@ ruleMaisonDeDisques returns [EObject current=null]
 		)*
 		otherlv_19='}'
 		{
-			newLeafNode(otherlv_19, grammarAccess.getMaisonDeDisquesAccess().getRightCurlyBracketKeyword_16());
+			newLeafNode(otherlv_19, grammarAccess.getMaisonDeDisqueAccess().getRightCurlyBracketKeyword_16());
 		}
 		otherlv_20='}'
 		{
-			newLeafNode(otherlv_20, grammarAccess.getMaisonDeDisquesAccess().getRightCurlyBracketKeyword_17());
-		}
-	)
-;
-
-// Entry rule entryRuleAlbum
-entryRuleAlbum returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAlbumRule()); }
-	iv_ruleAlbum=ruleAlbum
-	{ $current=$iv_ruleAlbum.current; }
-	EOF;
-
-// Rule Album
-ruleAlbum returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Album'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAlbumAccess().getAlbumKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAlbumAccess().getLeftCurlyBracketKeyword_1());
-		}
-		(
-			otherlv_2='anneeSortie'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getAlbumAccess().getAnneeSortieKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAlbumAccess().getAnneeSortieEDateParserRuleCall_2_1_0());
-					}
-					lv_anneeSortie_3_0=ruleEDate
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAlbumRule());
-						}
-						set(
-							$current,
-							"anneeSortie",
-							lv_anneeSortie_3_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EDate");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_4='type'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getAlbumAccess().getTypeKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAlbumAccess().getTypeAlbumsTypeEnumRuleCall_3_1_0());
-					}
-					lv_type_5_0=ruleAlbumsType
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAlbumRule());
-						}
-						set(
-							$current,
-							"type",
-							lv_type_5_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.AlbumsType");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='nom'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getAlbumAccess().getNomKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAlbumAccess().getNomEStringParserRuleCall_4_1_0());
-					}
-					lv_nom_7_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAlbumRule());
-						}
-						set(
-							$current,
-							"nom",
-							lv_nom_7_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_8='id'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getAlbumAccess().getIdKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAlbumAccess().getIdEStringParserRuleCall_5_1_0());
-					}
-					lv_id_9_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAlbumRule());
-						}
-						set(
-							$current,
-							"id",
-							lv_id_9_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_10='chansons'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getAlbumAccess().getChansonsKeyword_6());
-		}
-		otherlv_11='('
-		{
-			newLeafNode(otherlv_11, grammarAccess.getAlbumAccess().getLeftParenthesisKeyword_7());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAlbumRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getAlbumAccess().getChansonsChansonCrossReference_8_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_13=','
-			{
-				newLeafNode(otherlv_13, grammarAccess.getAlbumAccess().getCommaKeyword_9_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAlbumRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getAlbumAccess().getChansonsChansonCrossReference_9_1_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)*
-		otherlv_15=')'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getAlbumAccess().getRightParenthesisKeyword_10());
-		}
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getAlbumAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_20, grammarAccess.getMaisonDeDisqueAccess().getRightCurlyBracketKeyword_17());
 		}
 	)
 ;
@@ -461,67 +280,36 @@ ruleChanson returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getChansonAccess().getChansonKeyword_0());
 		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getChansonAccess().getLeftCurlyBracketKeyword_1());
-		}
 		(
-			otherlv_2='id'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getChansonAccess().getIdKeyword_2_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getChansonAccess().getIdEStringParserRuleCall_2_1_0());
+				{
+					newCompositeNode(grammarAccess.getChansonAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getChansonRule());
 					}
-					lv_id_3_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getChansonRule());
-						}
-						set(
-							$current,
-							"id",
-							lv_id_3_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"ups.m2dl.tpnote.MaisonDeDisque.EString");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
-		(
-			otherlv_4='titre'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getChansonAccess().getTitreKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getChansonAccess().getTitreEStringParserRuleCall_3_1_0());
-					}
-					lv_titre_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getChansonRule());
-						}
-						set(
-							$current,
-							"titre",
-							lv_titre_5_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_6='chanteurs'
+		)
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getChansonAccess().getChanteursKeyword_4());
+			newLeafNode(otherlv_2, grammarAccess.getChansonAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_7='('
+		otherlv_3='auteurs'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getChansonAccess().getLeftParenthesisKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getChansonAccess().getAuteursKeyword_3());
+		}
+		otherlv_4='('
+		{
+			newLeafNode(otherlv_4, grammarAccess.getChansonAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
@@ -531,7 +319,7 @@ ruleChanson returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getChansonAccess().getChanteursPersonneCrossReference_6_0());
+					newCompositeNode(grammarAccess.getChansonAccess().getAuteursPersonneCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -540,9 +328,9 @@ ruleChanson returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_9=','
+			otherlv_6=','
 			{
-				newLeafNode(otherlv_9, grammarAccess.getChansonAccess().getCommaKeyword_7_0());
+				newLeafNode(otherlv_6, grammarAccess.getChansonAccess().getCommaKeyword_6_0());
 			}
 			(
 				(
@@ -552,7 +340,7 @@ ruleChanson returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getChansonAccess().getChanteursPersonneCrossReference_7_1_0());
+						newCompositeNode(grammarAccess.getChansonAccess().getAuteursPersonneCrossReference_6_1_0());
 					}
 					ruleEString
 					{
@@ -561,17 +349,17 @@ ruleChanson returns [EObject current=null]
 				)
 			)
 		)*
-		otherlv_11=')'
+		otherlv_8=')'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getChansonAccess().getRightParenthesisKeyword_8());
+			newLeafNode(otherlv_8, grammarAccess.getChansonAccess().getRightParenthesisKeyword_7());
 		}
-		otherlv_12='auteur'
+		otherlv_9='chanteurs'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getChansonAccess().getAuteurKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getChansonAccess().getChanteursKeyword_8());
 		}
-		otherlv_13='('
+		otherlv_10='('
 		{
-			newLeafNode(otherlv_13, grammarAccess.getChansonAccess().getLeftParenthesisKeyword_10());
+			newLeafNode(otherlv_10, grammarAccess.getChansonAccess().getLeftParenthesisKeyword_9());
 		}
 		(
 			(
@@ -581,7 +369,7 @@ ruleChanson returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getChansonAccess().getAuteurPersonneCrossReference_11_0());
+					newCompositeNode(grammarAccess.getChansonAccess().getChanteursPersonneCrossReference_10_0());
 				}
 				ruleEString
 				{
@@ -590,9 +378,9 @@ ruleChanson returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_15=','
+			otherlv_12=','
 			{
-				newLeafNode(otherlv_15, grammarAccess.getChansonAccess().getCommaKeyword_12_0());
+				newLeafNode(otherlv_12, grammarAccess.getChansonAccess().getCommaKeyword_11_0());
 			}
 			(
 				(
@@ -602,7 +390,7 @@ ruleChanson returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getChansonAccess().getAuteurPersonneCrossReference_12_1_0());
+						newCompositeNode(grammarAccess.getChansonAccess().getChanteursPersonneCrossReference_11_1_0());
 					}
 					ruleEString
 					{
@@ -611,13 +399,163 @@ ruleChanson returns [EObject current=null]
 				)
 			)
 		)*
-		otherlv_17=')'
+		otherlv_14=')'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getChansonAccess().getRightParenthesisKeyword_13());
+			newLeafNode(otherlv_14, grammarAccess.getChansonAccess().getRightParenthesisKeyword_12());
 		}
-		otherlv_18='}'
+		otherlv_15='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getChansonAccess().getRightCurlyBracketKeyword_14());
+			newLeafNode(otherlv_15, grammarAccess.getChansonAccess().getRightCurlyBracketKeyword_13());
+		}
+	)
+;
+
+// Entry rule entryRuleAlbum
+entryRuleAlbum returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAlbumRule()); }
+	iv_ruleAlbum=ruleAlbum
+	{ $current=$iv_ruleAlbum.current; }
+	EOF;
+
+// Rule Album
+ruleAlbum returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Album'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAlbumAccess().getAlbumKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAlbumAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAlbumRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"ups.m2dl.tpnote.MaisonDeDisque.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getAlbumAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			otherlv_3='anneeSortie'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAlbumAccess().getAnneeSortieKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAlbumAccess().getAnneeSortieEStringParserRuleCall_3_1_0());
+					}
+					lv_anneeSortie_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAlbumRule());
+						}
+						set(
+							$current,
+							"anneeSortie",
+							lv_anneeSortie_4_0,
+							"ups.m2dl.tpnote.MaisonDeDisque.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_5='type'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAlbumAccess().getTypeKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAlbumAccess().getTypeAlbumTypeEnumRuleCall_4_1_0());
+					}
+					lv_type_6_0=ruleAlbumType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAlbumRule());
+						}
+						set(
+							$current,
+							"type",
+							lv_type_6_0,
+							"ups.m2dl.tpnote.MaisonDeDisque.AlbumType");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_7='chansons'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getAlbumAccess().getChansonsKeyword_5());
+		}
+		otherlv_8='('
+		{
+			newLeafNode(otherlv_8, grammarAccess.getAlbumAccess().getLeftParenthesisKeyword_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAlbumRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAlbumAccess().getChansonsChansonCrossReference_7_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_10=','
+			{
+				newLeafNode(otherlv_10, grammarAccess.getAlbumAccess().getCommaKeyword_8_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAlbumRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAlbumAccess().getChansonsChansonCrossReference_8_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_12=')'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getAlbumAccess().getRightParenthesisKeyword_9());
+		}
+		otherlv_13='}'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getAlbumAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -649,166 +587,26 @@ rulePersonne returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getPersonneAccess().getPersonneKeyword_1());
 		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getPersonneAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='nom'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getPersonneAccess().getNomKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPersonneAccess().getNomEStringParserRuleCall_3_1_0());
-					}
-					lv_nom_4_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPersonneRule());
-						}
-						set(
-							$current,
-							"nom",
-							lv_nom_4_0,
-							"ups.m2dl.tpNote.MaisonDeDisque.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_5='chansonsChanteur'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getPersonneAccess().getChansonsChanteurKeyword_4_0());
-			}
-			otherlv_6='('
-			{
-				newLeafNode(otherlv_6, grammarAccess.getPersonneAccess().getLeftParenthesisKeyword_4_1());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPersonneRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getPersonneAccess().getChansonsChanteurChansonCrossReference_4_2_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_8=','
 				{
-					newLeafNode(otherlv_8, grammarAccess.getPersonneAccess().getCommaKeyword_4_3_0());
+					newCompositeNode(grammarAccess.getPersonneAccess().getNameEStringParserRuleCall_2_0());
 				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getPersonneRule());
-							}
-						}
-						{
-							newCompositeNode(grammarAccess.getPersonneAccess().getChansonsChanteurChansonCrossReference_4_3_1_0());
-						}
-						ruleEString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_10=')'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getPersonneAccess().getRightParenthesisKeyword_4_4());
-			}
-		)?
-		(
-			otherlv_11='chansonsAuteur'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getPersonneAccess().getChansonsAuteurKeyword_5_0());
-			}
-			otherlv_12='('
-			{
-				newLeafNode(otherlv_12, grammarAccess.getPersonneAccess().getLeftParenthesisKeyword_5_1());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPersonneRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getPersonneAccess().getChansonsAuteurChansonCrossReference_5_2_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_14=','
+				lv_name_2_0=ruleEString
 				{
-					newLeafNode(otherlv_14, grammarAccess.getPersonneAccess().getCommaKeyword_5_3_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPersonneRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"ups.m2dl.tpnote.MaisonDeDisque.EString");
+					afterParserOrEnumRuleCall();
 				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getPersonneRule());
-							}
-						}
-						{
-							newCompositeNode(grammarAccess.getPersonneAccess().getChansonsAuteurChansonCrossReference_5_3_1_0());
-						}
-						ruleEString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_16=')'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getPersonneAccess().getRightParenthesisKeyword_5_4());
-			}
-		)?
-		otherlv_17='}'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getPersonneAccess().getRightCurlyBracketKeyword_6());
-		}
+			)
+		)
 	)
-;
-
-// Entry rule entryRuleEDate
-entryRuleEDate returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEDateRule()); }
-	iv_ruleEDate=ruleEDate
-	{ $current=$iv_ruleEDate.current.getText(); }
-	EOF;
-
-// Rule EDate
-ruleEDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='EDate'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getEDateAccess().getEDateKeyword());
-	}
 ;
 
 // Entry rule entryRuleEString
@@ -845,8 +643,8 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	)
 ;
 
-// Rule AlbumsType
-ruleAlbumsType returns [Enumerator current=null]
+// Rule AlbumType
+ruleAlbumType returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -857,16 +655,16 @@ ruleAlbumsType returns [Enumerator current=null]
 		(
 			enumLiteral_0='SINGLE'
 			{
-				$current = grammarAccess.getAlbumsTypeAccess().getSINGLEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getAlbumsTypeAccess().getSINGLEEnumLiteralDeclaration_0());
+				$current = grammarAccess.getAlbumTypeAccess().getSINGLEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getAlbumTypeAccess().getSINGLEEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='COMPILATION'
 			{
-				$current = grammarAccess.getAlbumsTypeAccess().getCOMPILATIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getAlbumsTypeAccess().getCOMPILATIONEnumLiteralDeclaration_1());
+				$current = grammarAccess.getAlbumTypeAccess().getCOMPILATIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getAlbumTypeAccess().getCOMPILATIONEnumLiteralDeclaration_1());
 			}
 		)
 	)
